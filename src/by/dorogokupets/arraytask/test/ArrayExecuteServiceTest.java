@@ -13,9 +13,8 @@ class ArrayExecuteServiceTest {
     void findMaxValue() {
         int expected = 67;
         DataArray dataArray = new DataArray(new int[]{6, 9, 11, 13, 29, 67, 22, 44});
-        DataArray dataArray2 = new DataArray(new int[]{1,2,3,4,5,6,7,8,1,2,3});
         ArrayExecuteServiceImpl arrayExecuteService = new ArrayExecuteServiceImpl();
-        int actual = arrayExecuteService.findMaxValue(dataArray2);
+        int actual = arrayExecuteService.findMaxValue(dataArray);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -48,7 +47,7 @@ class ArrayExecuteServiceTest {
 
     @Test
     void findNegativeNumbers() {
-        int expected = 3;
+        int expected = 0;
         DataArray dataArray = new DataArray(new int[]{6, 9, 11, 13, 29, 67, 22, 44});
         ArrayExecuteServiceImpl arrayExecuteService = new ArrayExecuteServiceImpl();
         int actual = arrayExecuteService.findNegativeNumbers(dataArray);
@@ -57,7 +56,7 @@ class ArrayExecuteServiceTest {
 
     @Test
     void findAverageArray() {
-        double expected = 25;
+        double expected = 25.125;
         DataArray dataArray = new DataArray(new int[]{6, 9, 11, 13, 29, 67, 22, 44});
         ArrayExecuteServiceImpl arrayExecuteService = new ArrayExecuteServiceImpl();
         double actual = arrayExecuteService.findAverageArray(dataArray);
