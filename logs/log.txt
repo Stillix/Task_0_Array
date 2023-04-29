@@ -1,0 +1,6 @@
+2023-04-29 16:50:36 [main] INFO  dorogokupets.arraytask.service.impl.ArrayExecuteServiceImpl- Count positive numbers = 8
+2023-04-29 16:50:36 [main] INFO  dorogokupets.arraytask.service.impl.ArrayExecuteServiceImpl- Count negative numbers = 0
+2023-04-29 16:50:36 [main] INFO  dorogokupets.arraytask.service.impl.ArrayExecuteServiceImpl- Min value = 6
+2023-04-29 16:50:36 [main] INFO  dorogokupets.arraytask.service.impl.ArrayExecuteServiceImpl- Max value = 67
+2023-04-29 16:50:36 [main] INFO  dorogokupets.arraytask.service.impl.ArrayExecuteServiceImpl- Average of the array = 25.125
+2023-04-29 16:50:36 [main] INFO  dorogokupets.arraytask.service.impl.ArrayExecuteServiceImpl- Sum array numbers = 201
