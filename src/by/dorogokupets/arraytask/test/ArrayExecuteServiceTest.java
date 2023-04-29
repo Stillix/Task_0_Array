@@ -1,7 +1,7 @@
 package by.dorogokupets.arraytask.test;
 
-import by.dorogokupets.arraytask.service.impl.ArrayExecuteServiceImpl;
 import by.dorogokupets.arraytask.entity.DataArray;
+import by.dorogokupets.arraytask.service.impl.ArrayExecuteServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
