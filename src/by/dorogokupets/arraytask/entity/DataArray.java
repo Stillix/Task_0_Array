@@ -24,8 +24,21 @@ public class DataArray {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DataArray dataArray = (DataArray) o;
+        return Arrays.equals(array, dataArray.array);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(array);
+    }
+
+    @Override
     public String toString() {
-        return new StringJoiner(", ", DataArray.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ", "Class Name: "+DataArray.class.getSimpleName() + ".  ", "")
                 .add("array=" + Arrays.toString(array))
                 .toString();
     }
