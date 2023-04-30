@@ -5,6 +5,7 @@ import java.util.StringJoiner;
 
 public class DataArray {
     private int[] array;
+    private int arrayID;
 
     public DataArray() {
     }
@@ -14,7 +15,8 @@ public class DataArray {
     }
 
     public int[] getArray() {
-        return array;
+        int[] copyArray = array.clone();
+        return copyArray;
     }
 
     public void setArray(int[] array) {
