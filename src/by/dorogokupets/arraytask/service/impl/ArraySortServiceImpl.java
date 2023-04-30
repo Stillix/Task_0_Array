@@ -6,6 +6,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Arrays;
+
 public class ArraySortServiceImpl implements ArraySortService {
     private static Logger logger = LogManager.getLogger();
 
@@ -21,7 +23,7 @@ public class ArraySortServiceImpl implements ArraySortService {
                 }
             }
         }
-        logger.log(Level.INFO, "Bubble sorting of the array is successful");
+        logger.log(Level.INFO, "Bubble sorting of the array is successful"+ Arrays.toString(array));
         return array;
     }
 
@@ -38,7 +40,7 @@ public class ArraySortServiceImpl implements ArraySortService {
             array[min_idx] = array[i];
             array[i] = temp;
         }
-        logger.log(Level.INFO, "Select sorting of the array is successful");
+        logger.log(Level.INFO, "Select sorting of the array is successful"+ Arrays.toString(array));
         return array;
     }
 
@@ -56,7 +58,7 @@ public class ArraySortServiceImpl implements ArraySortService {
             }
             array[j + 1] = key;
         }
-        logger.log(Level.INFO, "Insert sorting of the array is successful");
+        logger.log(Level.INFO, "Insert sorting of the array is successful"+ Arrays.toString(array));
         return array;
     }
 }
