@@ -19,10 +19,6 @@ public class DataArray {
         return copyArray;
     }
 
-    public void setArray(int[] array) {
-        this.array = array;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -38,7 +34,7 @@ public class DataArray {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", "Class Name: "+DataArray.class.getSimpleName() + ".  ", "")
+        return new StringJoiner(", ", "Class Name: " + DataArray.class.getSimpleName() + ".  ", "")
                 .add("array=" + Arrays.toString(array))
                 .toString();
     }
