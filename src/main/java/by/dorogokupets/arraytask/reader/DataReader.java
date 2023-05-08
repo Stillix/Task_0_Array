@@ -34,7 +34,7 @@ public class DataReader {
                 throw new DataException("Failed to read file.", e);
             }
         } else {
-            throw new DataException("File cannot be read due to invalid path.");
+           logger.info("File cannot be read due to invalid path.");
         }
         return data;
     }
