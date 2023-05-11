@@ -17,7 +17,7 @@ public class DataReader {
         String data = null;
         Path path = Paths.get(filename);
         if (Files.exists(path) && !Files.isDirectory(path) && Files.isReadable(path)) {
-/*            Stream<String> fileStream = null;
+            Stream<String> fileStream = null;
             try {
                 fileStream = Files.lines(path);
                 data = fileStream.reduce((s1, s2) -> s1 + " " + s2).orElse("empty");
@@ -27,14 +27,9 @@ public class DataReader {
                 if (fileStream != null) {
                     fileStream.close();
                 }
-            }*/
-            try (Stream<String> arrays = Files.lines(path)) {
-                data = arrays.reduce((s1, s2) -> s1 + " " + s2).orElse("empty");
-            } catch (IOException e) {
-                throw new DataException("Failed to read file.", e);
             }
         } else {
-           logger.info("File cannot be read due to invalid path.");
+            logger.info("File cannot be read due to invalid path.");
         }
         return data;
     }
