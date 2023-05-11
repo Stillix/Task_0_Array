@@ -10,12 +10,19 @@ public class DataArray {
     public DataArray() {
     }
 
+    public int getArrayId() {
+        return arrayId;
+    }
+
+    public void setArrayId(int arrayId) {
+        this.arrayId = arrayId;
+    }
+
     public DataArray(int[] array) {
         this.array = array;
     }
 
     public int[] getArray() {
-     //   int[] copyArray = array.clone();
         return array;
     }
 
