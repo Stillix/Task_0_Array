@@ -69,3 +69,7 @@
 23:16:10.212 [main] INFO  dorogokupets.arraytask.service.impl.ArraySortServiceImpl - Bubble sorting of the array is successful[6, 9, 11, 13, 22, 29, 44, 67]
 23:16:10.218 [main] INFO  dorogokupets.arraytask.service.impl.ArraySortServiceImpl - Insert sorting of the array is successful[6, 9, 11, 13, 22, 29, 44, 67]
 23:16:10.221 [main] INFO  dorogokupets.arraytask.service.impl.ArraySortServiceImpl - Select sorting of the array is successful[6, 9, 11, 13, 22, 29, 44, 67]
+17:59:19.480 [main] INFO  by.dorogokupets.arraytask.reader.DataReader - File cannot be read due to invalid path.
+18:00:27.009 [main] INFO  by.dorogokupets.arraytask.reader.DataReader - File cannot be read due to invalid path.
+18:14:45.964 [main] INFO  by.dorogokupets.arraytask.reader.DataReader - File cannot be read due to invalid path.
+19:44:11.628 [main] INFO  by.dorogokupets.arraytask.reader.DataReader - File cannot be read due to invalid path.
