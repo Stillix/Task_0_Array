@@ -1,4 +1,4 @@
-package by.dorogokupets.arraytask.entity;
+package by.dorogokupets.arraytask.util;
 
 public class IdGenerator {
     private static int counter = 0;

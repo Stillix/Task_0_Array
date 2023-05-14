@@ -2,6 +2,7 @@ package by.dorogokupets.arraytask.entity;
 
 import by.dorogokupets.arraytask.observer.ArrayStatisticsObserver;
 import by.dorogokupets.arraytask.observer.impl.ArrayStatisticsObserverImpl;
+import by.dorogokupets.arraytask.util.IdGenerator;
 
 import java.util.Arrays;
 import java.util.StringJoiner;
@@ -14,18 +15,18 @@ public class DataArray {
     public DataArray() {
     }
 
+    public DataArray(int[] array) {
+        setArray(array);
+        arrayId = IdGenerator.generateId();
+        observer = new ArrayStatisticsObserverImpl();
+    }
+
     public int getArrayId() {
         return arrayId;
     }
 
     public void setArrayId(int arrayId) {
         this.arrayId = arrayId;
-    }
-
-    public DataArray(int[] array) {
-        setArray(array);
-        arrayId = IdGenerator.generateId();
-        observer = new ArrayStatisticsObserverImpl();
     }
 
     public void removeObserver() {

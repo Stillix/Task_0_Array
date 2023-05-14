@@ -1,52 +1,31 @@
 package by.dorogokupets.arraytask.entity;
 
+import by.dorogokupets.arraytask.service.impl.ArrayExecuteServiceImpl;
+
+import java.util.StringJoiner;
+
 public class ArrayStatistics {
     private int sumValue;
     private double averageValue;
     private int maxValue;
     private int minValue;
 
+    private static ArrayExecuteServiceImpl arrayExecuteService = new ArrayExecuteServiceImpl();
+
     public ArrayStatistics(DataArray array) {
-        int[] arrayData = array.getArray();
-        sumValue = calculateSum(arrayData);
-        averageValue = calculateAverage(arrayData);
-        maxValue = findMaxValue(arrayData);
-        minValue = findMinValue(arrayData);
+        sumValue = arrayExecuteService.calculateSumArray(array);
+        averageValue = arrayExecuteService.findAverageArray(array);
+        maxValue = arrayExecuteService.findMaxValue(array);
+        minValue = arrayExecuteService.findMinValue(array);
     }
 
-    public int calculateSum(int[] array) {
-        int sumValue = 0;
-        for (int i = 0; i < array.length; i++) {
-            sumValue += array[i];
-        }
-        return sumValue;
-    }
-
-    public double calculateAverage(int[] array) {
-         double averageValue;
-        int arrayLength = array.length;
-        int sum = calculateSum(array);
-        averageValue=(double) sum / arrayLength;
-        return averageValue;
-    }
-
-    public int findMaxValue(int[] array) {
-        int maxValue = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > maxValue) {
-                maxValue = array[i];
-            }
-        }
-        return maxValue;
-    }
-
-    public int findMinValue(int[] array) {
-        int minValue = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < minValue) {
-                minValue = array[i];
-            }
-        }
-        return minValue;
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", ArrayStatistics.class.getSimpleName() + "[", "]")
+                .add("sumValue=" + sumValue)
+                .add("averageValue=" + averageValue)
+                .add("maxValue=" + maxValue)
+                .add("minValue=" + minValue)
+                .toString();
     }
 }

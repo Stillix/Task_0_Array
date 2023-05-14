@@ -13,7 +13,9 @@ public class Warehouse {
     public static Warehouse getInstance() {
         return INSTANCE;
     }
-
+    public ArrayStatistics get(Integer key) {
+        return map.get(key);
+    }
     public ArrayStatistics put(Integer key, ArrayStatistics value) {
         return map.put(key, value);
     }

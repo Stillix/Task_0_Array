@@ -1,12 +1,22 @@
 package by.dorogokupets.arraytask.parser;
 
-import java.util.Arrays;
+import by.dorogokupets.arraytask.validator.impl.DataValidatorImpl;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataParser {
-        public List<String> parseData(String data) {
-            List<String> numbers = Arrays.asList(data.split("\\s+"));
-            return numbers;
+    private static final String SPACE_DELIMITER = "\\s+";
 
+    public List<Integer> parseData(String data) {
+        DataValidatorImpl validator = new DataValidatorImpl();
+        List<Integer> integers = new ArrayList<>();
+        String[] stringNumbers = data.split(SPACE_DELIMITER);
+        for (String str : stringNumbers) {
+            if (validator.stringNumberValidate(str)) {
+                integers.add(Integer.parseInt(str));
+            }
+        }
+        return integers;
     }
 }
