@@ -12,5 +12,6 @@ public class ArrayStatisticsObserverImpl implements ArrayStatisticsObserver {
         int id = array.getArrayId();
         Warehouse warehouse = Warehouse.getInstance();
         warehouse.put(id, statistics);
+        // второй метод реагирует на смену айди
     }
 }
