@@ -1,4 +1,4 @@
-package by.dorogokupets.arraytask.repository.specification;
+package by.dorogokupets.arraytask.repository;
 
 import by.dorogokupets.arraytask.entity.DataArray;
 

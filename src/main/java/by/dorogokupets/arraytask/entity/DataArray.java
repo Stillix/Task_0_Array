@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.StringJoiner;
 
 public class DataArray {
-    private int[] array;
     private int arrayId;
+    private int[] array;
     private ArrayStatisticsObserver observer;
 
     public DataArray() {
@@ -19,14 +19,20 @@ public class DataArray {
         setArray(array);
         arrayId = IdGenerator.generateId();
         observer = new ArrayStatisticsObserverImpl();
+
     }
 
     public int getArrayId() {
         return arrayId;
     }
 
-    public void setArrayId(int arrayId) {
-        this.arrayId = arrayId;
+    public void setArrayId(int newId) {
+        int oldId = this.arrayId;
+        this.arrayId = newId;
+        Warehouse warehouse = Warehouse.getInstance();
+        ArrayStatistics statistics = warehouse.get(oldId);
+        warehouse.put(newId, statistics);
+        warehouse.remove(oldId);
     }
 
     public void removeObserver() {
@@ -47,6 +53,7 @@ public class DataArray {
         } else {
             this.array = new int[]{0};
         }
+        notifyObserver();
     }
 
     @Override
@@ -60,6 +67,12 @@ public class DataArray {
     @Override
     public int hashCode() {
         return Arrays.hashCode(array);
+    }
+
+    private void notifyObserver() {
+        if (observer != null) {
+            observer.changeArrayElement(this);
+        }
     }
 
     @Override

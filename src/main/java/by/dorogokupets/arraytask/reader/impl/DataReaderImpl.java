@@ -16,23 +16,36 @@ public class DataReaderImpl implements DataReader {
 
     @Override
     public String read(String filename) throws DataException {
-        String data = null;
         Path path = Paths.get(filename);
-        if (Files.exists(path) && !Files.isDirectory(path) && Files.isReadable(path)) {
-            Stream<String> fileStream = null;
-            try {
-                fileStream = Files.lines(path);
-                data = fileStream.reduce((s1, s2) -> s1 + " " + s2).orElse("empty");
-            } catch (IOException e) {
-                throw new DataException("Failed to read file. "+filename, e);
-            } finally {
-                if (fileStream != null) {
-                    fileStream.close();
-                }
-            }
-        } else {
-            logger.error("File cannot be read due to invalid path."+filename);
+        if (!Files.exists(path) || Files.isDirectory(path) || !Files.isReadable(path)) {
+            throw new DataException("File cannot be read due to invalid path or file access: " + filename);
         }
-        return data;
+        Stream<String> fileStream = null;
+        try {
+            fileStream = Files.lines(path);
+            return fileStream.reduce((s1, s2) -> s1 + " " + s2)
+                    .orElseThrow(() -> new DataException("File is empty." + filename));
+        } catch (IOException e) {
+            throw new DataException("Failed to read file: " + filename, e);
+        } finally {
+            if (fileStream != null) {
+                fileStream.close();
+            }
+        }
     }
+
+//    public String read2(String filename) throws DataException {
+//        Path path = Paths.get(filename);
+//        if (!Files.exists(path) || Files.isDirectory(path) || !Files.isReadable(path)) {
+//            throw new DataException("File cannot be read due to invalid path or access restrictions: " + filename);
+//        }
+//        try (Stream<String> fileStream = Files.lines(path)) {
+//            return fileStream.reduce((s1, s2) -> s1 + " " + s2)
+//                    .orElseThrow(() -> new DataException("File is empty: " + filename));
+//        } catch (IOException e) {
+//            throw new DataException("Failed to read file: " + filename, e);
+//        }
+//    }
+
+
 }

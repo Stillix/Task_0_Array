@@ -1,9 +1,9 @@
 package by.dorogokupets.arraytask.util;
 
 public class IdGenerator {
-    private static int counter = 0;
+    private static int counter;
 
     public static int generateId() {
-        return counter++;
+        return ++counter;
     }
 }

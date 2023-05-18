@@ -1,5 +1,6 @@
 package by.dorogokupets.arraytask.entity;
 
+import by.dorogokupets.arraytask.service.ArrayExecuteService;
 import by.dorogokupets.arraytask.service.impl.ArrayExecuteServiceImpl;
 
 import java.util.StringJoiner;
@@ -10,7 +11,7 @@ public class ArrayStatistics {
     private int maxValue;
     private int minValue;
 
-    private static ArrayExecuteServiceImpl arrayExecuteService = new ArrayExecuteServiceImpl();
+    private static ArrayExecuteService arrayExecuteService = new ArrayExecuteServiceImpl();
 
     public ArrayStatistics(DataArray array) {
         sumValue = arrayExecuteService.calculateSumArray(array);

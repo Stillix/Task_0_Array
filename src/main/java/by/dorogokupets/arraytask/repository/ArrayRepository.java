@@ -1,7 +1,6 @@
 package by.dorogokupets.arraytask.repository;
 
 import by.dorogokupets.arraytask.entity.DataArray;
-import by.dorogokupets.arraytask.repository.specification.Specification;
 
 import java.util.ArrayList;
 import java.util.List;
