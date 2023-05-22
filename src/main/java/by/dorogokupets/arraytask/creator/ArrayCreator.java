@@ -1,4 +1,4 @@
-package by.dorogokupets.arraytask.creater;
+package by.dorogokupets.arraytask.creator;
 
 import by.dorogokupets.arraytask.entity.DataArray;
 import by.dorogokupets.arraytask.exception.DataException;

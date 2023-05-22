@@ -19,20 +19,14 @@ public class DataArray {
         setArray(array);
         arrayId = IdGenerator.generateId();
         observer = new ArrayStatisticsObserverImpl();
-
     }
 
     public int getArrayId() {
         return arrayId;
     }
 
-    public void setArrayId(int newId) {
-        int oldId = this.arrayId;
-        this.arrayId = newId;
-        Warehouse warehouse = Warehouse.getInstance();
-        ArrayStatistics statistics = warehouse.get(oldId);
-        warehouse.put(newId, statistics);
-        warehouse.remove(oldId);
+    public void setArrayId(int arrayId) {
+        this.arrayId = arrayId;
     }
 
     public void removeObserver() {
@@ -72,6 +66,7 @@ public class DataArray {
     private void notifyObserver() {
         if (observer != null) {
             observer.changeArrayElement(this);
+//          observer.changeArrayId(this, arrayId);
         }
     }
 

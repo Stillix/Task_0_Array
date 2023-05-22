@@ -1,6 +1,6 @@
-package by.dorogokupets.arraytask.creater.impl;
+package by.dorogokupets.arraytask.creator.impl;
 
-import by.dorogokupets.arraytask.creater.ArrayCreator;
+import by.dorogokupets.arraytask.creator.ArrayCreator;
 import by.dorogokupets.arraytask.entity.DataArray;
 import by.dorogokupets.arraytask.exception.DataException;
 
