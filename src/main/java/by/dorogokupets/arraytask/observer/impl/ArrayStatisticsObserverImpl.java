@@ -20,6 +20,8 @@ public class ArrayStatisticsObserverImpl implements ArrayStatisticsObserver {
         int oldId = array.getArrayId();
         array.setArrayId(newId);
         Warehouse warehouse = Warehouse.getInstance();
+        ArrayStatistics statistics = warehouse.get(oldId);
+        warehouse.put(newId, statistics);
         warehouse.remove(oldId);
     }
 }
